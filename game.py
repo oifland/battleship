@@ -13,6 +13,13 @@ board = {
 }
 
 print "Here is the board:"
-
+print "  0 1 2 3 4 5 6 7"
 for row_name, cells in board.items():
-  print row_name, cells
+  print row_name,
+  for cell in cells:
+    if cell == 0:
+      print "~",
+    else:
+      print "X",
+  print ""
+
