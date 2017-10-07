@@ -23,3 +23,15 @@ for row_name, cells in board.items():
       print "X",
   print ""
 
+print "What row would you like to guess?"
+row = raw_input()
+print "What column would you like to guess?"
+column = input()
+
+cell = board[row][column]
+
+if cell == 1:
+  print "It's a HIT!"
+else:
+  print "It's a miss. Too bad."
+
