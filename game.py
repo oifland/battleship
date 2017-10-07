@@ -13,11 +13,6 @@ board = {
 }
 
 print "Here is the board:"
-print board['A']
-print board['B']
-print board['C']
-print board['D']
-print board['E']
-print board['F']
-print board['G']
-print board['H']
+
+for row_name, cells in board.items():
+  print row_name, cells
