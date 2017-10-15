@@ -26,10 +26,11 @@ for row_name in sorted(board.keys()):
             print "X",
     print ""
 
-print "What row would you like to guess?"
-row = raw_input().capitalize()
-print "What column would you like to guess?"
-column = input()
+print "What row/column would you like to guess?"
+row_column = raw_input().capitalize()
+
+row = row_column[0]
+column = int(row_column[1])
 
 cell = board[row][column]
 
