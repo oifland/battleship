@@ -27,7 +27,7 @@ for row_name in sorted(board.keys()):
     print ""
 
 print "What row would you like to guess?"
-row = raw_input()
+row = raw_input().capitalize()
 print "What column would you like to guess?"
 column = input()
 
