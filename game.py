@@ -26,15 +26,22 @@ for row_name in sorted(board.keys()):
             print "X",
     print ""
 
-print "What row/column would you like to guess?"
-row_column = raw_input().capitalize()
+still_playing = True
 
-row = row_column[0]
-column = int(row_column[1])
+while still_playing:
+    print "What row/column would you like to guess?"
+    row_column = raw_input().capitalize()
 
-cell = board[row][column]
+    if len(row_column) == 2:
+        row = row_column[0]
+        column = int(row_column[1])
 
-if cell == 1:
-    print "It's a HIT!"
-else:
-    print "It's a miss. Too bad."
+        cell = board[row][column]
+
+        if cell == 1:
+            print "It's a HIT!"
+        else:
+            print "It's a miss. Too bad."
+    else:
+        print "Bye!"
+        still_playing = False
