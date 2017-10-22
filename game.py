@@ -14,6 +14,19 @@ board = {
     'J': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 }
 
+guesses = {
+    "A": [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    "B": [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    "C": [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    "D": [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    "E": [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    "F": [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    "G": [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    "H": [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    "I": [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    "J": [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
+}
+
 print "Here is the board:"
 print "  0 1 2 3 4 5 6 7 8 9"
 for row_name in sorted(board.keys()):
@@ -39,9 +52,19 @@ while still_playing:
         cell = board[row][column]
 
         if cell == 1:
+            guesses[row][column] = "H"
             print "It's a HIT!"
         else:
+            guesses[row][column] = "M"
             print "It's a miss. Too bad."
+
+        print "  0 1 2 3 4 5 6 7 8 9"
+        for row_name in sorted(guesses.keys()):
+            cells = guesses[row_name]
+            print row_name,
+            for cell in cells:
+                print cell,
+            print ""
     else:
         print "Bye!"
         still_playing = False
